@@ -124,8 +124,10 @@ bool Factory::isPortNameValid(const std::string &type, const std::string port_na
     // ElementLibraryDatabase
     LibraryInfo* lib = ElementLibraryDatabase::getLibraryInfo(elemlib);
     if ( lib != NULL ) {
+	cout << "lib is not NULL\n";
         ComponentElementInfo* comp = lib->getComponent(elem);
         if ( comp != NULL ) {
+	    	cout << "comp is not NULL\n";
             portNames = &(comp->getPortnames());
         }
         else {
