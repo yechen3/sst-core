@@ -1,0 +1,12 @@
+prefix=/home/liu2550/SST_v2/sst-build/sst-core
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: SSTCore
+Description: Structural Simulation Toolkit (SST) Parallel Discrete Event Core
+Version: 8.0.0
+URL: http://www.sst-simulator.org/
+Libs: -Wl,-undefined -Wl,dynamic_lookup
+Cflags: -DHAVE_CONFIG_H -I${includedir} -I${includedir}/sst  -I/home/liu2550/SST_v2/sst-build/openmpi-2.1.3/include
+
