@@ -123,21 +123,23 @@ bool Factory::isPortNameValid(const std::string &type, const std::string port_na
     // Check to see if library is loaded into new
     // ElementLibraryDatabase
     LibraryInfo* lib = ElementLibraryDatabase::getLibraryInfo(elemlib);
+    printf("lib is %p\n", lib);
     if ( lib != NULL ) {
-	   	std::cout << "====================lib is found=====================";
+	std::cout << "====================lib is found=====================\n";
         ComponentElementInfo* comp = lib->getComponent(elem);
         if ( comp != NULL ) {
-			std::cout << "====================comp is found=====================";
+	    std::cout << "====================comp is found=====================\n";
             portNames = &(comp->getPortnames());
         }
         else {
             SubComponentElementInfo* subcomp = lib->getSubComponent(elem);
             if ( subcomp != NULL ) {
-				std::cout << "====================subcomp is found=====================";
+		std::cout << "====================subcomp is found=====================\n";
                 portNames = &(subcomp->getPortnames());
             }
         }
     }
+    fflush(stdout);
     
     std::string tmp = elemlib + "." + elem;
 
